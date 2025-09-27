@@ -1,0 +1,41 @@
+h1 {
+    color: yellow;
+}
+body {
+  background-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* gives a colored background & padding */
+header {
+    background-color: #DA291C;
+    padding: 1rem;
+}
+
+/* Uses flexbox to arrange links horizontally (and wrap if screen is small) */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Styled links with padding, rounded corners, and hover effects */
+nav a {
+  text-decoration: none;
+  color: yellow;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: yellow;
+  color: #c62828;
+}
