@@ -35,31 +35,31 @@ def beef_and_pork():
 
 @app.route('/Chicken-and-fish')
 def chicken_and_fish():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Chicken-and-fish.html', categories = csv_items())
 
 @app.route('/Salads')
 def salads():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Salads.html', categories = csv_items())
 
 @app.route('/Snacks-and-sides')
 def snacks_and_sides():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Snacks-and-sides.html', categories = csv_items())
 
 @app.route('/Desserts')
 def desserts():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Desserts.html', categories = csv_items())
 
 @app.route('/Beverages')
 def beverages():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Beverages.html', categories = csv_items())
 
 @app.route('/Coffee-and-tea')
 def coffee_and_tea():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Coffee-and-tea.html', categories = csv_items())
 
 @app.route('/Smoothies-and-shakes')
 def smoothies_and_shakes():
-    return render_template('index.html', categories = csv_items())
+    return render_template('Smoothies-and-shakes.html', categories = csv_items())
 
 if __name__ == '__main__':
     app.run(debug=True)
