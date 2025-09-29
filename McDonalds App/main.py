@@ -9,17 +9,21 @@ def csv_categories():
     categories = df["Category"].unique()
     return categories
 
-def csv_items():
+def csv_items(category):
     df = pd.read_csv("mcdonalds.csv")
     items = []
     for cat in csv_categories():
-    #if category == cat:
-        rows = df.values.tolist()
-        for row in rows:
-            if row[0] == cat:
-                items.append(row[1])
+    #through csv categories
+        if cat == category:
+        #if csv cat == chosen cat
+            rows = df.values.tolist()
+            for row in rows:
+                if row[0] == cat:
+                    items.append(row[1])
     return items
 
+#need to return this value from a html
+csv_items(category="Breakfast")
 
 @app.route('/')
 def index():
