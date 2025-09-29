@@ -11,16 +11,14 @@ def csv_categories():
 
 def csv_items(category):
     df = pd.read_csv("mcdonalds.csv")
+    df = df.fillna("")
     items = []
-    for cat in csv_categories():
-    #through csv categories
-        if cat == category:
-        #if csv cat == chosen cat
-            rows = df.values.tolist()
-            for row in rows:
-                if row[0] == cat:
-                    items.append(row[1:])
-    return items
+    headers = list(df.columns[1:])
+    for _, row in df.iterrows():
+        if row["Category"] == category:
+            items.append(row[1:].tolist())
+
+    return items, headers
 
 @app.route('/')
 def index():

@@ -21,10 +21,13 @@
 </header>
 <body>
     <h1>Breakfast</h1>
-    <p>{{categories}}</p>
-    {% for item in items %}
-    <p>{{items}}</p>
+    {% for row in categories %}
+    <td>{{ row["Breakfast"] }}</td>
+        {% for column in row %}
+            <p>{{column}}</p>
+            <p>{{row}}</p>
     <hr>
+        {% endfor %}
     {% endfor %}
 
 </body>
