@@ -1,0 +1,73 @@
+/* Reset some default browser styles */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+body {
+    background: linear-gradient(135deg, #1f1f1f, #2d2d3a);
+    color: #f1f1f1;
+    line-height: 1.6;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffd166;
+}
+
+/* Main text block */
+p {
+    max-width: 700px;
+    margin: 1rem auto;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 8px;
+    background-color: #4CAF50;  /* green */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+
+  .btn:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+  }
+    /* Center buttons */
+    .button-container {
+      text-align: center;  /* Centers inline-block elements like your .btn */
+      margin-top: 2rem;
+   }
+
+/* Status box (for inventory/HP) */
+.status-box {
+    max-width: 300px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgba(255,255,255,0.08);
+    border-left: 4px solid #ffd166;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}

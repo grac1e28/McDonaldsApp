@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1> {{ message }}</h1>
+    <div>
+        <a id="Forest" href="{{ url_for('forest') }}" class="btn">Go To Forest</a>
+        <a id="Village" href="{{ url_for('village') }}" class="btn">Go To Village</a>
+        <a id="Riverbank" href="{{ url_for('river') }}" class="btn">Go To Riverbank</a>
+    </div>
+</body>
+</html>
