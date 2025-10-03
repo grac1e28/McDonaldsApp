@@ -14,9 +14,9 @@ def csv_items(category):
     df = df.fillna("")
     items = []
     headers = list(df.columns[1:])
-    for _, row in df.iterrows():
-        if row["Category"] == category:
-            items.append(row[1:].tolist())
+    for row in df.iterrows():
+        if row[0] == category:
+            items.append(row[1:])
 
     return items, headers
 

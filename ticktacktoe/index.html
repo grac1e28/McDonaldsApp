@@ -1,0 +1,74 @@
+<!doctype html>
+el.style.setProperty('--s', (rand(0.7,1.08)).toFixed(2));
+el.style.setProperty('--sx', (rand(-12,12)).toFixed(0) + 'px');
+el.style.setProperty('--wiggle', (rand(20,120)).toFixed(0) + 'px');
+
+
+const delay = rand(-2, 3.8).toFixed(2);
+const duration = rand(6.8, 12.5).toFixed(2);
+
+
+el.style.animation = `rise ${duration}s ease-in forwards`;
+el.style.animationDelay = delay + 's';
+
+
+// add secondary swirl/pulse on petals
+if(!isHeart){
+el.style.animation += `, swirl ${rand(2.8,5.2).toFixed(2)}s ease-in-out infinite`;
+el.style.animationDelay = delay + 's, 0s';
+el.style.style = 'will-change: transform';
+} else {
+// hearts rotate gently
+el.style.animation += `, swirl ${rand(2.2,4.0).toFixed(2)}s ease-in-out infinite`;
+}
+
+
+// random z-index so some appear in front/back
+el.style.zIndex = Math.floor(rand(1,10));
+
+
+// slight scale
+el.style.transform = `translate3d(0,0,0) scale(${(rand(0.88,1.12)).toFixed(2)})`;
+
+
+sky.appendChild(el);
+
+
+// remove after animation ends to keep DOM tidy
+const totalMS = (Math.abs(Number(delay)) + Number(duration) + 1) * 1000;
+setTimeout(()=>{ if(el.parentNode) el.parentNode.removeChild(el); }, totalMS);
+}
+
+
+// after a few seconds, show the message and add a decorative swirl of flowers around it
+const SHOW_AFTER = 4200; // ms
+setTimeout(()=>{
+message.classList.add('show');
+
+
+// add a few static decorative flowers around the message
+for(let i=0;i<8;i++){
+const d = document.createElement('div');
+d.className='petal';
+const size = Math.floor(rand(28,52));
+d.innerHTML = flowerSVG(size, '#fff0f6', '#ffd9ec', '#8fd28a');
+d.style.left = (50 + rand(-36,36)) + '%';
+d.style.bottom = (45 + rand(-12,30)) + '%';
+d.style.opacity = 0.95;
+d.style.transform = `translate3d(0,0,0) scale(${(rand(0.8,1.05)).toFixed(2)})`;
+d.style.animation = `swirl ${rand(3.2,6.4).toFixed(2)}s ease-in-out infinite, pulse ${rand(2.6,4.2).toFixed(2)}s ease-in-out infinite`;
+sky.appendChild(d);
+}
+
+
+}, SHOW_AFTER);
+
+
+// optional: keyboard or click to replay
+document.addEventListener('click', ()=> location.reload());
+document.addEventListener('keydown', (e)=>{ if(e.key === 'r') location.reload(); });
+
+
+</script>
+</body>
+</html>

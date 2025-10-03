@@ -14,14 +14,15 @@ body {
 header {
     background-color: #DA291C;
     padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Uses flexbox to arrange links horizontally (and wrap if screen is small) */
 nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* Styled links with padding, rounded corners, and hover effects */
@@ -38,4 +39,38 @@ nav a {
 nav a:hover {
   background-color: yellow;
   color: #c62828;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ /*   position: absolute;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;*/
+}
+
+.search-container input {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #FFD700;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #F4C430;  /* darker on hover */
 }
